@@ -19,7 +19,7 @@ class SelectorButton extends StatelessWidget {
   final bool isScrollControlled;
   final Color? dropdownColor;
   final ValueChanged<Country?> onCountryChanged;
-
+  final BorderRadius? borderRadius;
   const SelectorButton({
     Key? key,
     required this.countries,
@@ -33,6 +33,7 @@ class SelectorButton extends StatelessWidget {
     required this.isEnabled,
     required this.isScrollControlled,
     required this.dropdownColor,
+    required this.borderRadius,
   }) : super(key: key);
 
   @override
@@ -42,6 +43,7 @@ class SelectorButton extends StatelessWidget {
             ? DropdownButtonHideUnderline(
                 child: DropdownButton<Country>(
                   dropdownColor: dropdownColor ?? Colors.white,
+                  borderRadius: borderRadius ?? BorderRadius.circular(12),
                   key: Key(TestHelper.DropdownButtonKeyValue),
                   hint: Item(
                     country: country,
